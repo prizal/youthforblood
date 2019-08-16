@@ -55,7 +55,7 @@ reg_route.post('/', upload.single('avatar'), async(req,res)=>
 
 
 reg_route.post('/search', async(req,res)=>{
-let groupdata= await register.find({bloodgroup:req.body.requiredblood });
+let groupdata= await register.find({bloodgroup:req.body.requiredblood,address:req.body.location });
     res.render("donors_nearby",{groupdata}); 
 
 })
